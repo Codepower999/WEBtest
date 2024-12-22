@@ -1,0 +1,116 @@
+/* 全局樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('ROG.gif'); /* 替換為您的背景圖片 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative; /* 確保左上角按鈕可以絕對定位 */
+}
+
+/* 頁面標題樣式 */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* 主要內容樣式 */
+main .content {
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+}
+
+/* 圖片展示區 */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+    background: transparent; /* 確保 footer 無背景色 */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* 單個圖片及其標題樣式 */
+.image-box {
+    text-align: center;
+    width: 45%;
+}
+
+.image-box .image {
+    max-width: 100%;
+    height: auto;
+    background: transparent; /* 確保圖片背景透明 */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.image-title {
+    margin-top: 10px;
+    font-size: 2rem;
+    color: #ffffff;
+}
+/* 返回按鈕樣式 */
+.nav-button {
+    position: absolute;
+    background-color: rgba(184, 13, 13, 0.562);
+    /* 半透明白色背景 */
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 滑鼠懸停效果 */
+.nav-button:hover {
+    background-color: #1c1c1c;
+    color: rgb(255, 0, 0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+/* 中央區域 */
+.center-content {
+    text-align: center;
+}
+
+/* 標題樣式 */
+.main-title {
+    font-size: 3.3rem; /* 放大標題 */
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* 顯示數字按鈕 */
+.show-button {
+    font-size: 2rem; /* 放大按鈕字體 */
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.show-button:hover {
+    background-color: #218838;
+}

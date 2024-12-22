@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+table {
+    width: 640px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+td:first-child {
+    background-color: #f7f9fc;
+    font-weight: bold;
+    width: 100px;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* 導航欄容器 */
+.nav-links {
+    position: fixed;
+    /* 固定在頁面上方 */
+    top: 0px;
+    left: 0px;
+    display: flex;
+    gap: 15px;
+    /* 按鈕之間的間距 */
+}
+
+/* 返回按鈕樣式 */
+.nav-button {
+    background-color: rgba(184, 13, 13, 0.562);
+    /* 半透明白色背景 */
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 滑鼠懸停效果 */
+.nav-button:hover {
+    background-color: #1c1c1c;
+    color: rgb(255, 0, 0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}

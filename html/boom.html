@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>終極密碼遊戲</title>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            font-size: 18px;
+            width: 120px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            border-color: #fda085;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background: #fda085;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #f6d365;
+            transform: translateY(-3px);
+            box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .rules {
+            margin-top: 40px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>終極密碼遊戲</h1>
+    <p>請猜一個 1 到 100 之間的數字：</p>
+
+    <input type="number" id="guess" min="1" max="100" placeholder="1-100">
+    <br>
+    <button onclick="checkGuess()">猜測</button>
+
+    <div id="message" class="message"></div>
+
+    <div class="rules">
+        <p>遊戲規則：猜測一個1~100的數字，每次猜測會根據猜測數值更改上下限。</p>
+    </div>
+
+    <script>
+        // 隨機產生 1 到 100 的數字作為答案
+        const secretNumber = Math.floor(Math.random() * 100) + 1;
+        let lowerBound = 1;
+        let upperBound = 100;
+
+        // 判斷用戶猜測的數字
+        function checkGuess() {
+            const userGuess = parseInt(document.getElementById('guess').value);
+            const messageDiv = document.getElementById('message');
+
+            // 檢查用戶輸入
+            if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+                messageDiv.textContent = '請輸入 1 到 100 之間的數字。';
+                messageDiv.style.color = 'red';
+                return;
+            }
+
+            // 檢查猜測是否正確
+            if (userGuess === secretNumber) {
+                alert('恭喜！您猜對了！');
+                location.reload(); // 重新載入頁面，開始新一輪遊戲
+            } else {
+                if (userGuess < secretNumber) {
+                    lowerBound = userGuess + 1; // 猜的數字太小，更新下限
+                    messageDiv.textContent = `你猜的是：${userGuess}。請猜一個更大的數字！範圍：${lowerBound} 到 ${upperBound}`;
+                } else {
+                    upperBound = userGuess - 1; // 猜的數字太大，更新上限
+                    messageDiv.textContent = `你猜的是：${userGuess}。請猜一個更小的數字！範圍：${lowerBound} 到 ${upperBound}`;
+                }
+                messageDiv.style.color = 'orange';
+            }
+        }
+    </script>
+    <a href="index.html" class="nav-button">回首頁</a>
+</body>
+
+</html>

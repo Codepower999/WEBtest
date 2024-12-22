@@ -1,0 +1,116 @@
+</html>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梁炂墿作業首頁</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('ROG.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .screensaver {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('ROG.gif');
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .screensaver.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .screensaver-content {
+        text-align: center;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    /* 可以添加一些漂亮的文字效果 */
+    .screensaver h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .screensaver p {
+        font-size: 1.5em;
+        opacity: 0.8;
+    }
+</style>
+
+<body>
+    <div class="text-center">
+        <h1>梁炂墿的網頁首頁</h1>
+    </div>
+    <div class="dropdown-container">
+        <select class="custom-dropdown">
+            <option value="all" selected>顯示全部</option>
+            <option value="link1">超連結</option>
+            <option value="link2">網頁表格製作:個人履歷表</option>
+            <option value="link3">input表格製作</option>
+        </select>
+    </div>
+    <div id="linkContainer" class="container">
+        <a href="ling1.html" class="column link1">
+            <h1>超連結</h1>
+            <img src="img/Thunder Serpent Narwa .jpg" alt="雷神龍" draggable="false">
+            <p>內含其他多種連結</p>
+        </a>
+        <a href="table.html" class="column link2">
+            <h1>網頁表格製作:個人履歷表</h1>
+            <img src="img/Fatalis.jpg" alt="黑龍" draggable="false">
+            <p>作者資料</p>
+        </a>
+        <a href="form.html" class="column link3">
+            <h1>input表格製作</h1>
+            <img src="img/Wind Serpent Ibushi .jpg" alt="風神龍" draggable="false">
+            <p>表單試做</p>
+        </a>
+    </div>
+    <div id="screensaver" class="screensaver">
+        <div class="screensaver-content">
+            <!-- 這裡可以是您想要顯示的內容，例如動畫文字 -->
+            <h2>歡迎回來！</h2>
+            <p>移動後繼續...</p>
+        </div>
+    </div>
+    <!-- 連結JavaScript檔案 -->
+    <script src="javascript/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castle Drawing</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #87CEEB; /* 天空藍色 */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="castleCanvas" width="800" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('castleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 畫地面
+        ctx.fillStyle = "#228B22"; // 綠色草地
+        ctx.fillRect(0, 500, 800, 100);
+
+        // 畫城堡牆壁
+        ctx.fillStyle = "#8B4513"; // 棕色牆壁
+        ctx.fillRect(200, 300, 400, 200);
+
+        // 畫塔樓
+        function drawTower(x, y) {
+            ctx.fillStyle = "#8B4513";
+            ctx.fillRect(x, y, 100, 200);
+
+            // 塔樓頂部
+            ctx.fillStyle = "#D2691E"; // 橙色頂部
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + 50, y - 50);
+            ctx.lineTo(x + 100, y);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        drawTower(150, 200);
+        drawTower(550, 200);
+
+        // 畫城門
+        ctx.fillStyle = "#654321"; // 深棕色城門
+        ctx.fillRect(350, 400, 100, 100);
+        ctx.beginPath();
+        ctx.arc(400, 400, 50, 0, Math.PI, true); // 半圓城門
+        ctx.fill();
+
+        // 畫旗幟
+        function drawFlag(x, y) {
+            ctx.fillStyle = "#FF0000"; // 紅色旗幟
+            ctx.fillRect(x, y, 50, 30);
+            ctx.fillStyle = "#000000"; // 黑色旗桿
+            ctx.fillRect(x, y, 5, 100);
+        }
+
+        drawFlag(185, 150);
+        drawFlag(585, 150);
+    </script>
+</body>
+</html>

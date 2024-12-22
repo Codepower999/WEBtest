@@ -1,0 +1,178 @@
+
+
+.text-center h1 {
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-items: center;
+    /* 設置一個高度 */
+    height: 200px;
+    /* 多行文字的每行文字也置中 */
+    text-align: center;
+    font-size: 5rem;
+    /* 更大的字體 */
+    color: #fff;
+    /* 白色文字 */
+    background-color: rgba(0, 0, 0, 0.63);
+    /* 半透明黑色背景 */
+    padding: 5px 10px;
+    /* 內邊距 */
+    border-radius: 0px;
+    /* 圓角 */
+    box-shadow: 0 4px 8px rgba(255, 3, 3, 0.2);
+    /* 陰影效果 */
+    text-transform: uppercase;
+    /* 文字大寫 */
+    letter-spacing: 3px;
+    /* 字間距 */
+    margin-bottom: 0px;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.container1 {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+    margin-top: 50px;  /* 增加上邊距，可以調整數值 */
+}
+.column {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    /* 添加過渡效果 */
+    display: block;
+    /* 使整個區塊可點擊 */
+    text-decoration: none;
+    /* 去除超連結的下劃線 */
+    color: inherit;
+    /* 繼承文字顏色 */
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    pointer-events: none;
+    /* 禁用圖片的點擊事件 */
+    user-select: none;
+    /* 禁用選擇 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    /* 禁用拖曳 */
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    max-height: 400px;
+    /* 限制圖片最大高度 */
+    object-fit: cover;
+    /* 確保圖片填滿且不變形 */
+}
+
+.column h2 {
+    margin-top: 0;
+}
+
+.column p {
+    color: #666;
+}
+
+/* 滑鼠移動到欄位時的樣式 */
+.column:hover {
+    background-color: #000000;
+    /* 深灰色背景 */
+    color: #fff;
+    /* 白色文字 */
+    opacity: 0.7;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .column {
+        width: 80%;
+        /* 手機版面寬度 */
+        max-width: none;
+    }
+}
+
+/* 導航欄容器 */
+.nav-links {
+    position: fixed;
+    /* 固定在頁面上方 */
+    top: 0px;
+    left: 0px;
+    display: flex;
+    gap: 15px;
+    /* 按鈕之間的間距 */
+}
+
+/* 返回按鈕樣式 */
+.nav-button {
+    background-color: rgba(184, 13, 13, 0.562);
+    /* 半透明白色背景 */
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 滑鼠懸停效果 */
+.nav-button:hover {
+    background-color: #1c1c1c;
+    color: rgb(255, 0, 0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.custom-dropdown {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    width: 250px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.custom-dropdown:hover {
+    border-color: #1f1f1f;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 15px #d9d9d9,
+                -7px -7px 15px #ffffff;
+}
+
+.custom-dropdown:focus {
+    border-color: #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+/* 調整下拉選項的樣式 */
+.custom-dropdown option {
+    padding: 20px;
+    background-color: white;
+    color: #333;
+}

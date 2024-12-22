@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input表單練習</title>
+    <link rel="stylesheet" href="css/form.css">
+    <script>
+        function sayhello(content){
+            alert(content);
+        }
+
+    </script>
+    
+</head>
+<body>
+    <div class="form-section">
+        <h1>個人生活習慣調查</h1>
+        <span><h3>1. 請輸入性別</h3></span>
+        <label>男</label><input type="radio" name="apdt" value="1">
+        <label>女</label><input type="radio" name="apdt" value="1">
+        <label>無</label><input type="radio" name="apdt" value="1">
+        <label>不方便透露</label><input type="radio" name="apdt" value="1"><br>
+
+        <span><h3>2. 喜愛的食物</h3></span>
+        <label>吃飯</label><input type="checkbox" name="apdt" value="1"><br>
+        <label>吃麵</label><input type="checkbox" name="apdt" value="2"><br>
+        <label>西餐</label><input type="checkbox" name="apdt" value="3"><br>
+        <label>中餐</label><input type="checkbox" name="apdt" value="4"><br>
+
+        <span><h3>3. 喜歡的運動</h3></span>
+        <label for="dropdown">選擇運動:</label>
+        <select id="dropdown" name="options">
+            <option value="option1">棒球</option>
+            <option value="option2">籃球</option>
+            <option value="option3">游泳</option>
+            <option value="option4">排球</option>
+        </select><br><br>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="fileUpload">可在此上傳檔案:</label>
+            <input type="file" id="fileUpload" name="file" accept=".jpg, .png, .pdf">
+            <input type="submit" value="上傳">
+        </form>
+
+        <input type="button" id="but1" value="送出" onclick="sayhello('已送出')">
+    </div>
+    <div class="nav-links">
+        <a href="index.html" class="nav-button">上一頁</a>
+        <a href="index.html" class="nav-button">回首頁</a>
+    </div>
+</body>
+</html>

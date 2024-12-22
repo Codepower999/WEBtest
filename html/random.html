@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸運號碼</title>
+    <link rel="stylesheet" href="css/random.css">
+    <script>
+        function ran_f() {
+            alert("開始選擇號碼")
+            let a = []
+            a.length = 49
+            for (i = 1; i <= a.length; i++) {
+                a[i - 1] = i
+                console.log("位置:", i - 1, a[i - 1])
+            }
+            for (i = a.length - 1; i > 0; i--) { //i代表最後的位置
+                r = Math.floor(Math.random() * (i + 1))
+                console.log("亂數位置:", r)
+                c = a[i]
+                a[i] = a[r]
+                a[r] = c
+            }
+            console.log("打散後")
+            for (i = 0; i < a.length; i++) {
+                console.log("位置:", i, a[i])
+            }
+            for (i = a.length - 7; i < a.length - 1; i++) {
+                let x = 0
+                console.log("電腦選號:", a[i])
+                x++
+            }
+            console.log("特別號:", a[i])
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html" class="nav-button">回首頁</a>
+    <div class="center-content">
+        <h1 class="main-title">幸運號碼</h1>
+        <button class="show-button" onclick="ran_f()">顯示數字</button>
+    </div>
+    <footer>
+        <div class="image-container">
+            <div class="image-box">
+                <h1 class="image-title">Python</h1>
+                <img src="img/python_random.jpg" alt="左邊的圖片" class="image">
+            </div>
+            <div class="image-box">
+                <h1 class="image-title">Java</h1>
+                <img src="img/java_random.jpg" alt="右邊的圖片" class="image">
+            </div>
+        </div>
+    </footer>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('ROG.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .screensaver {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('ROG.gif');
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .screensaver.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .screensaver-content {
+        text-align: center;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    /* 可以添加一些漂亮的文字效果 */
+    .screensaver h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .screensaver p {
+        font-size: 1.5em;
+        opacity: 0.8;
+    }
+</style>
+</html>

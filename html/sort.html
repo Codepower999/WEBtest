@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打散及排序</title>
+</head>
+<script>
+    function sort_f() {
+        alert("開始選擇號碼")
+        let b = []
+        let Max = 0
+        for (i = 0; i <= 10; i++) {
+            b[i] = Math.floor(Math.random() * 100)
+        }
+        for (i = 0; i < b.length; i++) {
+            if (b[i] > Max) {
+                Max = b[i]
+            }
+        }
+        
+        console.log("陣列數值為:" + b.toString(b))
+        console.log("最大數值為:" + Max)
+        b.sort((a, b) => a - b)
+        console.log("比較過後為:" + b.toString(b))
+    }
+
+</script>
+<style>
+    /* 頁面標題樣式 */
+    header {
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    /* 中央區域 */
+    .center-content {
+        text-align: center;
+    }
+
+    /* 標題樣式 */
+    .main-title {
+        font-size: 3.3rem;
+        /* 放大標題 */
+        margin-bottom: 20px;
+        color: #000000;
+    }
+
+    /* 主要內容樣式 */
+    main .content {
+        text-align: center;
+        padding: 20px;
+        flex: 1;
+    }
+
+    /* 顯示數字按鈕 */
+    .show-button {
+        font-size: 2rem;
+        /* 放大按鈕字體 */
+        padding: 15px 30px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .show-button:hover {
+        background-color: #218838;
+    }
+</style>
+
+<body>
+    <a href="index.html" class="nav-button">回首頁</a>
+    <div class="center-content">
+        <h1 class="main-title">JS顯示的數值都在F12</h1>
+        <button class="show-button" onclick="sort_f()">顯示數字</button>
+    </div>
+</body>
+
+</html>
